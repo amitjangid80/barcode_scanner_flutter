@@ -31,12 +31,11 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: Obx(
               () => ListView.builder(
-                itemCount: _homeController.barcodeScannerResultList.length,
+                itemCount: _homeController.barcodeScannerResultList?.length ?? 0,
                 itemBuilder: (context, _position) {
                   BarcodeScannerResult _barcodeScannerResult = _homeController.barcodeScannerResultList[_position];
 
-                  return Material(
-                    elevation: 4,
+                  return MaterialCard(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
